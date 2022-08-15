@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	 xmlns:app="http://schemas.android.com/apk/res-auto"
+	 xmlns:tools="http://schemas.android.com/tools"
+	 android:id="@+id/master_nav"
+	app:startDestination="@id/loginFragment">
+	<fragment
+		android:id="@+id/loginFragment"
+		android:name="com.alfayedoficial.shoestoreapp.ui.features.login.view.LoginFragment"
+		tools:layout="@layout/fragment_login">
+		<action
+			android:id="@+id/action_loginFragment_to_onboardFragment"
+			app:destination="@id/onboardFragment"
+			app:popUpTo="@id/loginFragment"
+			app:popUpToInclusive="true" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/onboardFragment"
+		tools:layout="@layout/fragment_onboard"
+		android:name="com.alfayedoficial.shoestoreapp.ui.features.onboarding.view.OnboardFragment">
+		<action
+			android:id="@+id/action_onboardFragment_to_instructionsFragment"
+			app:destination="@id/instructionsFragment"
+			app:popUpTo="@id/onboardFragment"
+			app:popUpToInclusive="true" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/instructionsFragment"
+		tools:layout="@layout/fragment_instructions"
+		android:name="com.alfayedoficial.shoestoreapp.ui.features.instructions.view.InstructionsFragment">
+		<action
+			android:id="@+id/action_instructionsFragment_to_homeFragment"
+			app:destination="@id/homeFragment"
+			app:popUpTo="@id/instructionsFragment"
+			app:popUpToInclusive="true" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/detailsFragment"
+		tools:layout="@layout/fragment_details"
+		android:name="com.alfayedoficial.shoestoreapp.ui.features.details.view.DetailsFragment" />
+
+	<fragment
+		android:id="@+id/homeFragment"
+		tools:layout="@layout/fragment_home"
+		android:name="com.alfayedoficial.shoestoreapp.ui.features.home.view.HomeFragment">
+		<action
+			android:id="@+id/action_homeFragment_to_detailsFragment"
+			app:destination="@id/detailsFragment" />
+	</fragment>
+
+
+</navigation>

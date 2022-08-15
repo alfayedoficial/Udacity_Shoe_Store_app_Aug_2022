@@ -1,12 +1,25 @@
 package com.alfayedoficial.shoestoreapp.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
 import com.alfayedoficial.shoestoreapp.R
+import com.alfayedoficial.shoestoreapp.R.*
+import com.alfayedoficial.shoestoreapp.core.common.activity.BaseActivity
+import com.alfayedoficial.shoestoreapp.databinding.ActivityOneSingleBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class OneSingleActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_one_single)
+@AndroidEntryPoint
+class OneSingleActivity : BaseActivity<ActivityOneSingleBinding>() {
+
+    override val layoutResourceId: Int
+        get() = R.layout.activity_one_single
+
+    override fun onActivityCreated(dataBinder: ActivityOneSingleBinding) {
+        dataBinder.apply {
+            activity = this@OneSingleActivity
+            lifecycleOwner = this@OneSingleActivity
+
+            val navHostFragment = supportFragmentManager.findFragmentById(id.navLaunchGraph) as NavHostFragment
+            navController = navHostFragment.navController
+        }
     }
 }

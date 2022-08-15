@@ -1,3 +1,20 @@
 <resources>
-	 <string name="app_name">Shoe Store app</string>
+    <string name="app_name">Shoe Store app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="welcome_mes">welcome, Happy working day</string>
+    <string name="email">Email</string>
+
+    <string name="enter_your_pass">password</string>
+    <string name="login">sign in</string>
+    <string name="login_existing_account">sign in with an existing account</string>
+
+    <string name="error_empty_field">Error!, field is empty</string>
+    <string name="error_invalid_field">Error!, field is wrong</string>
+    <string name="error_invalid_email">Error!, email is wrong</string>
+    <string name="error_invalid_field_less_character">Error!, the field is less than the required characters</string>
+    <string name="error_invalid_field_special_character"><![CDATA[Username must not contain .*[~!@#$%^&*()_=+|/,.\"\';:{}<>?].*]]></string>
+
+
 </resources>

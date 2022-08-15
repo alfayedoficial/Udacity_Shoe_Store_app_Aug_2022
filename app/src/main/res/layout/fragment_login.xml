@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.alfayedoficial.shoestoreapp.ui.features.login.view.LoginFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.features.login.view.LoginFragment">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->fragment.takeFocus()}"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_shape_circle"
+            android:layoutDirection="ltr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:onClick="@{()->fragment.takeFocus()}"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo_app"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+            app:layout_constraintEnd_toEndOf="@+id/imageView6" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:onClick="@{()->fragment.takeFocus()}"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardElevation="@dimen/_6sdp"
+                app:cardMaxElevation="@dimen/_1sdp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{()->fragment.takeFocus()}">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        style="@style/textBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/welcome_mes"
+                        android:textColor="@color/purple_700"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailContainer"
+                        style="@style/loginTextInputLayout"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/email"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:startIconDrawable="@drawable/ic_mail"
+                        app:startIconTint="@color/athens_gray2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="emailAddress"
+                            android:imeOptions="actionNext"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/athens_gray2"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordContainer"
+                        style="@style/loginTextInputLayout"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:hint="@string/enter_your_pass"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/emailContainer"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTintMode="@color/athens_gray2"
+                        app:startIconDrawable="@drawable/ic_password"
+                        app:startIconTint="@color/athens_gray2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/athens_gray2"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/passwordContainer"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/purple_700"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:onClick="@{()-> fragment.onLoginClicked()}"
+                            android:text="@string/login"
+                            android:textAllCaps="true"
+                            android:textSize="14sp"
+                            android:textAppearance="@style/textLightStyle"
+                            app:cornerRadius="@dimen/_17sdp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="match_parent"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:onClick="@{()-> fragment.onLoginWithAnExistingAccountClicked()}"
+                            android:text="@string/login_existing_account"
+                            android:textAllCaps="true"
+                            android:textSize="11sp"
+                            app:strokeColor="@color/teal_200"
+                            app:strokeWidth="2dp"
+                            android:textColor="@color/teal_200"
+                            android:textAppearance="@style/textLightStyle"
+                            app:cornerRadius="@dimen/_17sdp" />
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
