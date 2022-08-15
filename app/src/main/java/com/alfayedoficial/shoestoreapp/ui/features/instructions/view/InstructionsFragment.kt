@@ -1,22 +1,26 @@
 package com.alfayedoficial.shoestoreapp.ui.features.instructions.view
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.alfayedoficial.shoestoreapp.R
+import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
+import com.alfayedoficial.shoestoreapp.databinding.FragmentInstructionsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class InstructionsFragment : BaseFragment<FragmentInstructionsBinding>() {
 
-class InstructionsFragment : Fragment() {
+    override val layoutResourceLayout: Int
+        get() = R.layout.fragment_instructions
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructions, container, false)
+    override fun onFragmentCreated(dataBinder: FragmentInstructionsBinding) {
+        dataBinder.apply {
+            fragment = this@InstructionsFragment
+            lifecycleOwner =this@InstructionsFragment
+        }
     }
 
+    override fun setUpViewModelStateObservers() {println("Instructions fragment") }
+
+    fun introductionsClicked(){
+        navController.navigate(R.id.action_instructionsFragment_to_homeFragment)
+    }
 }

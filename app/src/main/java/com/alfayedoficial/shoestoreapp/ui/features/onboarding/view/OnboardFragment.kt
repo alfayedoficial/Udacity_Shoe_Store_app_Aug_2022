@@ -1,22 +1,27 @@
 package com.alfayedoficial.shoestoreapp.ui.features.onboarding.view
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.alfayedoficial.shoestoreapp.R
+import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
+import com.alfayedoficial.shoestoreapp.databinding.FragmentOnboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class OnboardFragment : BaseFragment<FragmentOnboardBinding>() {
 
-class OnboardFragment : Fragment() {
+    override val layoutResourceLayout: Int
+        get() = R.layout.fragment_onboard
 
+    override fun onFragmentCreated(dataBinder: FragmentOnboardBinding) {
+        dataBinder.apply {
+            fragment = this@OnboardFragment
+            lifecycleOwner = this@OnboardFragment
+        }
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboard, container, false)
+    override fun setUpViewModelStateObservers() {println("onboard fragment") }
+
+    fun onBoardingClicked(){
+        navController.navigate(R.id.action_onboardFragment_to_instructionsFragment)
     }
 
 }
