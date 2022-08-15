@@ -1,6 +1,10 @@
 package com.alfayedoficial.shoestoreapp.ui.features.home.view
 
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.fragment.app.activityViewModels
+import com.alfayedoficial.kotlinutils.KUConstants
 import com.alfayedoficial.kotlinutils.kuGetBindingDialog
 import com.alfayedoficial.kotlinutils.kuRes
 import com.alfayedoficial.shoestoreapp.R
@@ -27,6 +31,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             homeToolbar.apply { setBaseActivityFragmentsToolbar(kuRes.getString(R.string.menu_txt_main_screen), toolbar, tvNameToolbar) }
 
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.header_menu_dashboard, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId ){
+            R.id.menuLogOut -> requestLogout()
+        }
+        return true
+    }
+
+    private fun requestLogout() {
+        appPreferences.removeKey(KUConstants.KU_IS_LOGIN)
+        navController.navigate(R.id.action_homeFragment_to_loginFragment)
     }
 
     override fun setUpViewModelStateObservers() {

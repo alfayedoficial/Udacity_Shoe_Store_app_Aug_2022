@@ -95,6 +95,8 @@
                     android:id="@+id/etSize"
                     style="@style/editTextStyle"
                     android:hint="@string/enter_shoe_size"
+                    android:maxLength="2"
+                    android:ems="2"
                     android:importantForAutofill="no"
                     android:inputType="number" />
 

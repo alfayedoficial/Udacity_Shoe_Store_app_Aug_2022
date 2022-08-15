@@ -37,22 +37,6 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override fun setUpViewModelStateObservers() { println("Details Fragment") }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.header_menu_dashboard, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId ){
-            R.id.menuLogOut -> requestLogout()
-        }
-        return true
-    }
-
-    private fun requestLogout() {
-        appPreferences.removeKey(KUConstants.KU_IS_LOGIN)
-    }
-
     fun takeFocus() = kuTakeFocus(dataBinder.lyParent)
 
 
@@ -88,7 +72,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             }
 
             !company.kuValidName() -> {
-                dataBinder.etName.error = getString(R.string.m_company_invalid)
+                dataBinder.etCompany.error = getString(R.string.m_company_invalid)
                 false
             }
 
@@ -96,9 +80,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
                 dataBinder.etSize.error = getString(R.string.m_size_invalid)
                 false
             }
+            size.length > 2 -> {
+                dataBinder.etSize.error = getString(R.string.m_size_invalid_length)
+                false
+            }
 
-            dec.length >= 250 -> {
-                dataBinder.etName.error = getString(R.string.m_dec_invalid)
+            dec.length > 250 -> {
+                dataBinder.etDec.error = getString(R.string.m_dec_invalid)
                 false
             }
 

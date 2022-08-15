@@ -95,10 +95,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|start"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:gravity="start|top"
                     style="@style/textBoldStyle"
                     android:text="@string/description_"
                     android:textColor="@color/textFont"
@@ -108,7 +108,6 @@
                     style="@style/textRegularStyle"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:singleLine="true"
                     android:text="@{model.dec}"
                     android:textColor="@color/purple_700"
                     android:textSize="@dimen/_12ssp"

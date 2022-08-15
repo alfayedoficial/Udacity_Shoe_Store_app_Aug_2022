@@ -45,6 +45,7 @@
     <string name="m_name_invalid">Name is Invalid</string>
     <string name="m_company_invalid">Company is Invalid</string>
     <string name="m_size_invalid">Size is Invalid</string>
+    <string name="m_size_invalid_length">Size is Invalid ,max 2 characters</string>
     <string name="m_dec_invalid">Description is Invalid , max 250 characters</string>
     <string name="add_shoes">Add Shoes</string>
 
