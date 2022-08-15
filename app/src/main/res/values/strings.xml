@@ -21,6 +21,32 @@
     <string name="instructions">Instructions</string>
     <string name="onboarding">onboarding</string>
     <string name="instructions_screen">Instructions Screen</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="shoe_name_">Shoe Name :</string>
+    <string name="enter_shoe_name">Enter Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="company_">Company :</string>
+    <string name="enter_company">Enter Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_size_">Shoe Size :</string>
+    <string name="enter_shoe_size">Enter Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="description_">Description :</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="save_shoe">Save Shoe</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_new_shoe">Add New Shoe</string>
+
+    <string name="succesLogin">You are logged in successfully</string>
+    <string name="m_name_required">Name is required</string>
+    <string name="m_company_required">Company is required</string>
+    <string name="m_size_required">Size is required</string>
+    <string name="m_dec_required">Description is required</string>
+    <string name="m_name_invalid">Name is Invalid</string>
+    <string name="m_company_invalid">Company is Invalid</string>
+    <string name="m_size_invalid">Size is Invalid</string>
+    <string name="m_dec_invalid">Description is Invalid , max 250 characters</string>
+    <string name="add_shoes">Add Shoes</string>
 
 
 </resources>

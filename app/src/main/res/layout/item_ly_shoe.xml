@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.alfayedoficial.shoestoreapp.domain.model.ShoeModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="4sp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textBoldStyle"
+                    android:text="@string/shoe_name_"
+                    android:textColor="@color/textFont"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    style="@style/textRegularStyle"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="@{model.name}"
+                    android:textColor="@color/purple_700"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/shoe_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textBoldStyle"
+                    android:text="@string/company_"
+                    android:textColor="@color/textFont"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    style="@style/textRegularStyle"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="@{model.company}"
+                    android:textColor="@color/purple_700"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/company" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textBoldStyle"
+                    android:text="@string/shoe_size_"
+                    android:textColor="@color/textFont"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    style="@style/textRegularStyle"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="@{model.size.toString()}"
+                    android:textColor="@color/purple_700"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/shoe_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textBoldStyle"
+                    android:text="@string/description_"
+                    android:textColor="@color/textFont"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    style="@style/textRegularStyle"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="@{model.dec}"
+                    android:textColor="@color/purple_700"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="@string/description" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
