@@ -37,7 +37,7 @@
     <string name="cancel">Cancel</string>
     <string name="add_new_shoe">Add New Shoe</string>
 
-    <string name="succesLogin">You are logged in successfully</string>
+    <string name="succesLogin">Saving is successfully</string>
     <string name="m_name_required">Name is required</string>
     <string name="m_company_required">Company is required</string>
     <string name="m_size_required">Size is required</string>

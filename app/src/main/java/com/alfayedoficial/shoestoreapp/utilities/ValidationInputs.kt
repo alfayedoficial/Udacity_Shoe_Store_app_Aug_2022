@@ -188,11 +188,6 @@ object ValidationInputs {
                             input.second.requestFocus()
                             isValid = false
                         }
-                        !input.second.toString().kuValidEmail() -> {
-                            input.second.error = kuRes.getString(R.string.error_invalid_email)
-                            input.second.requestFocus()
-                            isValid = false
-                        }
                     }
                 }
                 2 -> { // password
