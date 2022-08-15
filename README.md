@@ -98,7 +98,7 @@ Open the starter project in Android Studio
        <img src = "https://raw.githubusercontent.com/alfayedoficial/Udacity_Shoe_Store_app_Aug_2022/master/img/Screenshot_4.png"/>
     </td>
     <td>
-       <img src = "(https://user-images.githubusercontent.com/32135935/184718658-e352db6a-8bcd-498a-96f5-a66361a8f8b3.png"/>
+       <img src = "(https://user-images.githubusercontent.com/32135935/184719376-d4fdcdde-2202-4a07-a539-9a65069e8cd4.png"/>
     </td>
      <td>
        <img src = "https://user-images.githubusercontent.com/32135935/184718631-49dd0505-208f-472c-b743-9a6c0556b4d2.png"/>
