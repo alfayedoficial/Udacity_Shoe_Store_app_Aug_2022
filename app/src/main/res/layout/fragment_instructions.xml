@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -8,16 +9,59 @@
             type="com.alfayedoficial.shoestoreapp.ui.features.instructions.view.InstructionsFragment" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center|top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.features.instructions.view.InstructionsFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/header_shos"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/instructions" />
 
-    </FrameLayout>
+        <TextView
+            style="@style/textBoldStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions_screen"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/textLightStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:textColor="@color/textFont"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/_11ssp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:onClick="@{()-> fragment.introductionsClicked()}"
+            android:text="@string/home"
+            android:textAllCaps="true"
+            app:strokeColor="@color/purple_500"
+            android:layout_marginHorizontal="@dimen/_60sdp"
+            app:strokeWidth="3dp"
+            android:textColor="@color/purple_500"
+            android:textAppearance="@style/textBoldStyle"
+            app:cornerRadius="@dimen/_17sdp" />
+
+
+
+    </LinearLayout>
 </layout>

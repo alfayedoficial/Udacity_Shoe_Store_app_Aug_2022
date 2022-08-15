@@ -4,6 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="welcome_mes">welcome, Happy working day</string>
+    <string name="welcome_onBoarding">welcome, OnBoarding Screen</string>
     <string name="email">Email</string>
 
     <string name="enter_your_pass">password</string>
@@ -15,6 +16,11 @@
     <string name="error_invalid_email">Error!, email is wrong</string>
     <string name="error_invalid_field_less_character">Error!, the field is less than the required characters</string>
     <string name="error_invalid_field_special_character"><![CDATA[Username must not contain .*[~!@#$%^&*()_=+|/,.\"\';:{}<>?].*]]></string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</string>
+    <string name="home">Home Shoe List</string>
+    <string name="instructions">Instructions</string>
+    <string name="onboarding">onboarding</string>
+    <string name="instructions_screen">Instructions Screen</string>
 
 
 </resources>
