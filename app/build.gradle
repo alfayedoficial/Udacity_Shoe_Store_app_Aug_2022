@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.alfayedoficial.shoestoreapp"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // NAME APK
+        setProperty("archivesBaseName", "${applicationId}-v${versionName}(${versionCode})")
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+
+    //Dagger - Hilt
+    implementation 'com.google.dagger:hilt-android:2.42'
+    kapt 'com.google.dagger:hilt-compiler:2.42'
+
+    def lifecycle_version = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Fragment
+    def fragment_ktx_version = "1.5.1"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx_version"
+    // Activity Androidx
+    def activity_ktx_Version = "1.5."
+    implementation "androidx.activity:activity-ktx:$activity_ktx_Version"
+
+    def kotlinUtils_Version = "1.0.11" // kotlin Utils
+    implementation "com.github.alfayedoficial:kotlinUtils:$kotlinUtils_Version"
+
+    def nav_version = "2.5.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"  // Feature module Support
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version" // Testing Navigation
+
+    // UI Material
+    def material_Version = "1.6.1" // Google Material
+    implementation "com.google.android.material:material:$material_Version"
+    def constraint_Version = "2.1.4" // constraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_Version"
+    def recyclerview_Version = "1.2.1" //Recyclerview
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_Version"
+    def intuit_Version = "1.1.0" // Sd - Dp
+    implementation "com.intuit.sdp:sdp-android:$intuit_Version"
+    implementation "com.intuit.ssp:ssp-android:$intuit_Version"
+
+    // MultiDexApplication
+    def multidex_Version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_Version"
+
+
+
+}
