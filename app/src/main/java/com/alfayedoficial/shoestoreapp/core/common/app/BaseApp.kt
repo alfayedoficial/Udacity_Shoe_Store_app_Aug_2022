@@ -9,9 +9,6 @@ import javax.inject.Inject
 @HiltAndroidApp
 class BaseApp : MultiDexApplication() {
 
-    @Inject
-    lateinit var appPreferences: KUPreferences
-
     override fun onCreate() {
         super.onCreate()
         MultiDex.install(this)

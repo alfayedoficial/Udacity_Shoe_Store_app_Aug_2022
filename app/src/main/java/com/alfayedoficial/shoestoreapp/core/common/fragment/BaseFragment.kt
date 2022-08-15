@@ -23,8 +23,6 @@ import javax.inject.Inject
  */
 abstract class BaseFragment<T> : Fragment() where T: ViewDataBinding {
 
-    @Inject
-    protected lateinit var  appPreferences: KUPreferences
     @get:LayoutRes
     protected abstract val layoutResourceLayout : Int
 

@@ -11,5 +11,7 @@
 	<color name="textFont">#3C3C3C</color>
 	<color name="athens_gray">#e8e9ec</color>
 	<color name="athens_gray2">#C9C9C9</color>
+	<color name="TemplateGreen">#2BA951</color>
+	<color name="colorPrimary">#444D58</color>
 
 </resources>

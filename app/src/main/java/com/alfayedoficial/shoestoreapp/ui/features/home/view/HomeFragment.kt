@@ -1,22 +1,39 @@
 package com.alfayedoficial.shoestoreapp.ui.features.home.view
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import com.alfayedoficial.kotlinutils.kuGetBindingDialog
 import com.alfayedoficial.shoestoreapp.R
+import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
+import com.alfayedoficial.shoestoreapp.databinding.FragmentHomeBinding
+import com.alfayedoficial.shoestoreapp.databinding.ItemLyShoeBinding
+import com.alfayedoficial.shoestoreapp.ui.features.home.viewModel.HomeShoeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-class HomeFragment : Fragment() {
+    private val mViewModel by activityViewModels<HomeShoeViewModel>()
 
+    override val layoutResourceLayout: Int
+        get() = R.layout.fragment_home
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun onFragmentCreated(dataBinder: FragmentHomeBinding) {
+        dataBinder.apply {
+            fragment = this@HomeFragment
+            lifecycleOwner = this@HomeFragment
+        }
     }
+
+    override fun setUpViewModelStateObservers() {
+        mViewModel.shoesLiveData.observe(viewLifecycleOwner) {shoes ->
+            for (item in shoes) {
+                val lyShoeBinding = kuGetBindingDialog(layoutInflater, R.layout.item_ly_shoe) as ItemLyShoeBinding
+                lyShoeBinding.model = item
+                dataBinder.lyListShoes.addView(lyShoeBinding.root)
+            }
+        }
+    }
+
+    fun onAddShoeClick() = navController.navigate(R.id.action_homeFragment_to_detailsFragment)
 
 }
