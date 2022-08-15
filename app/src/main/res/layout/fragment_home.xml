@@ -9,6 +9,7 @@
             type="com.alfayedoficial.shoestoreapp.ui.features.home.view.HomeFragment" />
     </data>
 
+    <!-- Comment in XML-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

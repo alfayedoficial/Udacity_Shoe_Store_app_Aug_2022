@@ -7,7 +7,7 @@
             name="fragment"
             type="com.alfayedoficial.shoestoreapp.ui.features.splash.view.SplashFragment" />
     </data>
-
+    <!-- is a view group that aligns all children in a single direction, vertically or horizontally.-->
     <LinearLayout
         android:orientation="vertical"
         android:gravity="center"

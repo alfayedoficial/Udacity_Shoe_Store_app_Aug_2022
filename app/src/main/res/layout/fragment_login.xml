@@ -9,7 +9,7 @@
             type="com.alfayedoficial.shoestoreapp.ui.features.login.view.LoginFragment" />
     </data>
 
-
+    <!-- I used constraint for size Screen-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lyParent"
         android:layout_width="match_parent"

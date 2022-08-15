@@ -9,7 +9,7 @@
             type="com.alfayedoficial.shoestoreapp.ui.features.onboarding.view.OnboardFragment" />
 
     </data>
-
+    <!-- is a view group that aligns all children in a single direction, vertically or horizontally.-->
     <LinearLayout
         android:orientation="vertical"
         android:gravity="center"

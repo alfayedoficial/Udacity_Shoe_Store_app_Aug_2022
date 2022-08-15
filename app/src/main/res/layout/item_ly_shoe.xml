@@ -16,7 +16,7 @@
         app:cardCornerRadius="@dimen/_5sdp"
         app:cardElevation="4sp"
         app:cardUseCompatPadding="true">
-
+        <!-- is a view group that aligns all children in a single direction, vertically or horizontally.-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

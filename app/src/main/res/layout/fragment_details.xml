@@ -1,170 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+	 xmlns:app="http://schemas.android.com/apk/res-auto"
+	 xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+	 <data>
 
-        <variable
-            name="fragment"
-            type="com.alfayedoficial.shoestoreapp.ui.features.details.view.DetailsFragment" />
-    </data>
+		  <variable
+			   name="fragment"
+			   type="com.alfayedoficial.shoestoreapp.ui.features.details.view.DetailsFragment" />
 
-    <LinearLayout
-        android:id="@+id/lyParent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:onClick="@{()->fragment.takeFocus()}"
-        tools:context=".ui.features.details.view.DetailsFragment">
+		  <variable
+			   name="mViewModel"
+			   type="com.alfayedoficial.shoestoreapp.ui.features.details.viewModel.DetailsShoeViewModel" />
 
-        <include
-            android:id="@+id/detailsToolbar"
-            layout="@layout/common_toolbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+	 </data>
+	 <!-- is a view group that aligns all children in a single direction, vertically or horizontally.-->
+	 <LinearLayout
+		  android:id="@+id/lyParent"
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"
+		  android:gravity="center"
+		  android:onClick="@{()->fragment.takeFocus()}"
+		  android:orientation="vertical"
+		  tools:context=".ui.features.details.view.DetailsFragment">
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:onClick="@{()->fragment.takeFocus()}"
-            android:scaleType="fitXY"
-            android:src="@drawable/logo_app"
-            android:contentDescription="@string/app_name" />
+		  <include
+			   android:id="@+id/detailsToolbar"
+			   layout="@layout/common_toolbar"
+			   app:layout_constraintEnd_toEndOf="parent"
+			   app:layout_constraintStart_toStartOf="parent"
+			   app:layout_constraintTop_toTopOf="parent" />
 
-
-        <TextView
-            android:id="@+id/textView"
-            style="@style/textBoldStyle"
-            android:onClick="@{()->fragment.takeFocus()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/add_new_shoe"
-            android:textColor="@color/purple_700"
-            android:textSize="@dimen/_16ssp" />
-
-        <ScrollView
-            android:onClick="@{()->fragment.takeFocus()}"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:onClick="@{()->fragment.takeFocus()}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_5sdp"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/textMediumStyle"
-                    android:text="@string/shoe_name"
-                    android:textColor="@color/purple_700"
-                    android:textSize="@dimen/_12ssp" />
-
-                <EditText
-                    android:id="@+id/etName"
-                    style="@style/editTextStyle"
-                    android:hint="@string/enter_shoe_name"
-                    android:importantForAutofill="no" />
-
-                <TextView
-                    style="@style/textMediumStyle"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="@string/company"
-                    android:textColor="@color/purple_700"
-                    android:textSize="@dimen/_12ssp" />
-
-                <EditText
-                    android:id="@+id/etCompany"
-                    style="@style/editTextStyle"
-                    android:hint="@string/enter_company"
-                    android:importantForAutofill="no" />
-
-                <TextView
-                    style="@style/textMediumStyle"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="@string/shoe_size"
-                    android:textColor="@color/purple_700"
-                    android:textSize="@dimen/_12ssp" />
-
-                <EditText
-                    android:id="@+id/etSize"
-                    style="@style/editTextStyle"
-                    android:hint="@string/enter_shoe_size"
-                    android:maxLength="2"
-                    android:ems="2"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-
-                <TextView
-                    style="@style/textMediumStyle"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="@string/description"
-                    android:textColor="@color/purple_700"
-                    android:textSize="@dimen/_12ssp" />
-
-                <EditText
-                    android:id="@+id/etDec"
-                    style="@style/editTextStyle"
-                    android:layout_height="@dimen/_70sdp"
-                    android:gravity="top|start"
-                    android:hint="@string/enter_description"
-                    android:imeOptions="actionDone"
-                    android:importantForAutofill="no"
-                    android:inputType="textMultiLine"
-                    android:overScrollMode="always"
-                    android:scrollIndicators="end"
-                    android:scrollbarSize="@dimen/_50sdp"
-                    android:scrollbars="vertical|horizontal" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        style="@style/Widget.MaterialComponents.Button.TextButton"
-                        android:layout_height="wrap_content"
-                        android:insetTop="0dp"
-                        android:insetBottom="0dp"
-                        android:onClick="@{()-> fragment.onCancelClicked()}"
-                        android:text="@string/cancel"
-                        android:textAllCaps="true"
-                        android:textSize="14sp"
-                        android:textColor="@color/teal_200"
-                        android:textAppearance="@style/textBoldStyle" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_weight="1.7"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/purple_700"
-                        android:insetTop="0dp"
-                        android:layout_marginStart="@dimen/_5sdp"
-                        android:insetBottom="0dp"
-                        android:onClick="@{()-> fragment.onSaveClicked()}"
-                        android:text="@string/save_shoe"
-                        android:textAllCaps="true"
-                        android:textSize="14sp"
-                        android:textAppearance="@style/textBoldStyle"
-                        app:cornerRadius="@dimen/_10sdp" />
+		  <ImageView
+			   android:id="@+id/imageView6"
+			   android:layout_width="@dimen/_100sdp"
+			   android:layout_height="@dimen/_100sdp"
+			   android:contentDescription="@string/app_name"
+			   android:onClick="@{()->fragment.takeFocus()}"
+			   android:scaleType="fitXY"
+			   android:src="@drawable/logo_app" />
 
 
-                </LinearLayout>
+		  <TextView
+			   android:id="@+id/textView"
+			   style="@style/textBoldStyle"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:gravity="center"
+			   android:onClick="@{()->fragment.takeFocus()}"
+			   android:text="@string/add_new_shoe"
+			   android:textColor="@color/purple_700"
+			   android:textSize="@dimen/_16ssp" />
+
+		  <ScrollView
+			   android:layout_width="match_parent"
+			   android:layout_height="match_parent"
+			   android:onClick="@{()->fragment.takeFocus()}">
+
+			   <LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="@dimen/_5sdp"
+					android:onClick="@{()->fragment.takeFocus()}"
+					android:orientation="vertical">
+
+					<TextView
+						 style="@style/textMediumStyle"
+						 android:text="@string/shoe_name"
+						 android:textColor="@color/purple_700"
+						 android:textSize="@dimen/_12ssp" />
+
+					<EditText
+						 android:id="@+id/etName"
+						 style="@style/editTextStyle"
+						 android:hint="@string/enter_shoe_name"
+						 android:importantForAutofill="no"
+						 android:text="@={mViewModel.shoeName}" />
+
+					<TextView
+						 style="@style/textMediumStyle"
+						 android:layout_marginTop="@dimen/_5sdp"
+						 android:text="@string/company"
+						 android:textColor="@color/purple_700"
+						 android:textSize="@dimen/_12ssp" />
+
+					<EditText
+						 android:id="@+id/etCompany"
+						 style="@style/editTextStyle"
+						 android:hint="@string/enter_company"
+						 android:importantForAutofill="no"
+						 android:text="@={mViewModel.shoeCompany}" />
+
+					<TextView
+						 style="@style/textMediumStyle"
+						 android:layout_marginTop="@dimen/_5sdp"
+						 android:text="@string/shoe_size"
+						 android:textColor="@color/purple_700"
+						 android:textSize="@dimen/_12ssp" />
+
+					<EditText
+						 android:id="@+id/etSize"
+						 style="@style/editTextStyle"
+						 android:ems="2"
+						 android:hint="@string/enter_shoe_size"
+						 android:importantForAutofill="no"
+						 android:inputType="number"
+						 android:maxLength="2"
+						 android:text="@={mViewModel.shoeSize}" />
+
+					<TextView
+						 style="@style/textMediumStyle"
+						 android:layout_marginTop="@dimen/_5sdp"
+						 android:text="@string/description"
+						 android:textColor="@color/purple_700"
+						 android:textSize="@dimen/_12ssp" />
+
+					<EditText
+						 android:id="@+id/etDec"
+						 style="@style/editTextStyle"
+						 android:layout_height="@dimen/_70sdp"
+						 android:gravity="top|start"
+						 android:hint="@string/enter_description"
+						 android:imeOptions="actionDone"
+						 android:importantForAutofill="no"
+						 android:inputType="textMultiLine"
+						 android:overScrollMode="always"
+						 android:scrollIndicators="end"
+						 android:scrollbarSize="@dimen/_50sdp"
+						 android:scrollbars="vertical|horizontal"
+						 android:text="@={mViewModel.shoeDescription}" />
+
+					<LinearLayout
+						 android:layout_width="match_parent"
+						 android:layout_height="wrap_content"
+						 android:layout_marginHorizontal="@dimen/_15sdp"
+						 android:layout_marginTop="@dimen/_6sdp"
+						 android:orientation="horizontal">
+
+						 <com.google.android.material.button.MaterialButton
+							  style="@style/Widget.MaterialComponents.Button.TextButton"
+							  android:layout_width="0dp"
+							  android:layout_height="wrap_content"
+							  android:layout_weight="1"
+							  android:insetTop="0dp"
+							  android:insetBottom="0dp"
+							  android:onClick="@{()-> fragment.onCancelClicked()}"
+							  android:text="@string/cancel"
+							  android:textAllCaps="true"
+							  android:textAppearance="@style/textBoldStyle"
+							  android:textColor="@color/teal_200"
+							  android:textSize="14sp" />
+
+						 <com.google.android.material.button.MaterialButton
+							  android:layout_width="0dp"
+							  android:layout_height="wrap_content"
+							  android:layout_marginStart="@dimen/_5sdp"
+							  android:layout_weight="1.7"
+							  android:backgroundTint="@color/purple_700"
+							  android:insetTop="0dp"
+							  android:insetBottom="0dp"
+							  android:onClick="@{()-> fragment.onSaveClicked()}"
+							  android:text="@string/save_shoe"
+							  android:textAllCaps="true"
+							  android:textAppearance="@style/textBoldStyle"
+							  android:textSize="14sp"
+							  app:cornerRadius="@dimen/_10sdp" />
 
 
-            </LinearLayout>
-
-        </ScrollView>
+					</LinearLayout>
 
 
-    </LinearLayout>
+			   </LinearLayout>
+
+		  </ScrollView>
+
+
+	 </LinearLayout>
 </layout>

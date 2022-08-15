@@ -1,18 +1,16 @@
 package com.alfayedoficial.shoestoreapp.ui.features.details.view
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.alfayedoficial.kotlinutils.KUCheckValidation.kuIsIntNumber
 import com.alfayedoficial.kotlinutils.KUCheckValidation.kuValidName
-import com.alfayedoficial.kotlinutils.KUConstants
 import com.alfayedoficial.kotlinutils.kuRes
 import com.alfayedoficial.kotlinutils.kuTakeFocus
 import com.alfayedoficial.shoestoreapp.R
 import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
 import com.alfayedoficial.shoestoreapp.databinding.FragmentDetailsBinding
 import com.alfayedoficial.shoestoreapp.domain.model.ShoeModel
+import com.alfayedoficial.shoestoreapp.ui.features.details.viewModel.DetailsShoeViewModel
 import com.alfayedoficial.shoestoreapp.ui.features.home.viewModel.HomeShoeViewModel
 import com.alfayedoficial.shoestoreapp.utilities.setBaseActivityFragmentsToolbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +18,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
 
-    private val mViewModel by activityViewModels<HomeShoeViewModel>()
+    private val activityViewModel by activityViewModels<HomeShoeViewModel>()
+    private val mViewModel by viewModels<DetailsShoeViewModel>()
 
     override val layoutResourceLayout: Int
         get() = R.layout.fragment_details
@@ -29,7 +28,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         dataBinder.apply {
             fragment = this@DetailsFragment
             lifecycleOwner = this@DetailsFragment
-
+            this.mViewModel = this@DetailsFragment.mViewModel
             detailsToolbar.apply { setBaseActivityFragmentsToolbar(kuRes.getString(R.string.menu_txt_main_detail_screen), toolbar, tvNameToolbar) }
 
         }
@@ -52,10 +51,10 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
     }
 
     private fun validationInput(): Boolean {
-        val name = dataBinder.etName.text.toString()
-        val company = dataBinder.etCompany.text.toString()
-        val size = dataBinder.etSize.text.toString()
-        val dec = dataBinder.etDec.text.toString()
+        val name = mViewModel.shoeName.value ?: ""
+        val company = mViewModel.shoeCompany.value ?: ""
+        val size = mViewModel.shoeSize.value ?: ""
+        val dec = mViewModel.shoeDescription.value ?: ""
 
         val status = when{
 
@@ -91,7 +90,7 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
             }
 
             else -> {
-                mViewModel.addNewShoe(ShoeModel(name = name, company = company, size =  size.toInt(), dec =dec))
+                activityViewModel.addNewShoe(ShoeModel(name = name, company = company, size =  size.toInt(), dec =dec))
                 true
             }
         }
