@@ -14,20 +14,27 @@
         android:layout_height="match_parent"
         tools:context=".ui.features.home.view.HomeFragment">
 
+        <include
+            android:id="@+id/homeToolbar"
+            layout="@layout/common_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeToolbar"
             tools:context=".presentation.shoe_listing.ShoeListingFragment">
 
             <LinearLayout
                 android:id="@+id/lyListShoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
         </ScrollView>
 

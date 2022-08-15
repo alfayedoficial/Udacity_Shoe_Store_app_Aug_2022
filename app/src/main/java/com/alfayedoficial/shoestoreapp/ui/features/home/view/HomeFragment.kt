@@ -2,11 +2,13 @@ package com.alfayedoficial.shoestoreapp.ui.features.home.view
 
 import androidx.fragment.app.activityViewModels
 import com.alfayedoficial.kotlinutils.kuGetBindingDialog
+import com.alfayedoficial.kotlinutils.kuRes
 import com.alfayedoficial.shoestoreapp.R
 import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
 import com.alfayedoficial.shoestoreapp.databinding.FragmentHomeBinding
 import com.alfayedoficial.shoestoreapp.databinding.ItemLyShoeBinding
 import com.alfayedoficial.shoestoreapp.ui.features.home.viewModel.HomeShoeViewModel
+import com.alfayedoficial.shoestoreapp.utilities.setBaseActivityFragmentsToolbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +23,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         dataBinder.apply {
             fragment = this@HomeFragment
             lifecycleOwner = this@HomeFragment
+
+            homeToolbar.apply { setBaseActivityFragmentsToolbar(kuRes.getString(R.string.menu_txt_main_screen), toolbar, tvNameToolbar) }
+
         }
     }
 

@@ -1,14 +1,20 @@
 package com.alfayedoficial.shoestoreapp.ui.features.details.view
 
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.fragment.app.activityViewModels
 import com.alfayedoficial.kotlinutils.KUCheckValidation.kuIsIntNumber
 import com.alfayedoficial.kotlinutils.KUCheckValidation.kuValidName
+import com.alfayedoficial.kotlinutils.KUConstants
+import com.alfayedoficial.kotlinutils.kuRes
 import com.alfayedoficial.kotlinutils.kuTakeFocus
 import com.alfayedoficial.shoestoreapp.R
 import com.alfayedoficial.shoestoreapp.core.common.fragment.BaseFragment
 import com.alfayedoficial.shoestoreapp.databinding.FragmentDetailsBinding
 import com.alfayedoficial.shoestoreapp.domain.model.ShoeModel
 import com.alfayedoficial.shoestoreapp.ui.features.home.viewModel.HomeShoeViewModel
+import com.alfayedoficial.shoestoreapp.utilities.setBaseActivityFragmentsToolbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,10 +29,29 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>() {
         dataBinder.apply {
             fragment = this@DetailsFragment
             lifecycleOwner = this@DetailsFragment
+
+            detailsToolbar.apply { setBaseActivityFragmentsToolbar(kuRes.getString(R.string.menu_txt_main_detail_screen), toolbar, tvNameToolbar) }
+
         }
     }
 
     override fun setUpViewModelStateObservers() { println("Details Fragment") }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.header_menu_dashboard, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId ){
+            R.id.menuLogOut -> requestLogout()
+        }
+        return true
+    }
+
+    private fun requestLogout() {
+        appPreferences.removeKey(KUConstants.KU_IS_LOGIN)
+    }
 
     fun takeFocus() = kuTakeFocus(dataBinder.lyParent)
 

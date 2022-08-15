@@ -19,6 +19,13 @@
         android:onClick="@{()->fragment.takeFocus()}"
         tools:context=".ui.features.details.view.DetailsFragment">
 
+        <include
+            android:id="@+id/detailsToolbar"
+            layout="@layout/common_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="@dimen/_100sdp"

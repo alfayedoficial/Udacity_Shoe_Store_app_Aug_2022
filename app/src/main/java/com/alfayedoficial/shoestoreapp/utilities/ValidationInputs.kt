@@ -1,4 +1,4 @@
-package com.alfayedoficial.shoestoreapp.utils
+package com.alfayedoficial.shoestoreapp.utilities
 
 import android.app.Activity
 import android.content.Context

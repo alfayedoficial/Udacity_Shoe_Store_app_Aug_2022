@@ -25,6 +25,9 @@ import javax.inject.Inject
  */
 abstract class BaseActivity<T> : AppCompatActivity() where T : ViewDataBinding {
 
+    @Inject
+    protected lateinit var  appPreferences: KUPreferences
+
     @get:LayoutRes
     protected abstract val layoutResourceId : Int
     private var _dataBinder: T? = null

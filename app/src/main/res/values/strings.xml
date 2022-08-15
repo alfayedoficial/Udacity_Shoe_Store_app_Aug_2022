@@ -48,5 +48,7 @@
     <string name="m_dec_invalid">Description is Invalid , max 250 characters</string>
     <string name="add_shoes">Add Shoes</string>
 
+    <string name="menu_txt_main_screen">Shoe listing</string>
+    <string name="menu_txt_main_detail_screen">Detail Shoe</string>
 
 </resources>
